@@ -52,7 +52,7 @@ MEDIA_URL = "/media/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "live-static-files", "media-root")
 
-ROOT_URLCONF = 'teach_forward_api.urls'
+ROOT_URLCONF = 'intreped.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'teach_forward_api.wsgi.application'
+WSGI_APPLICATION = 'intreped.wsgi.application'
 
 
 # Database
@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'teach_forward_api.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.path.join(BASE_DIR, 'teach_forward'),
+        'NAME': os.path.join(BASE_DIR, 'intreped'),
         'HOST': 'localhost',
         'PORT': '3001'
     }
