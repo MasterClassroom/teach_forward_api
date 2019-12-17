@@ -20,4 +20,4 @@ before_script:
   - psql -c "CREATE DATABASE intreped_test;" -U postgres
 
 script:
-  - test
+  - python3 manage.py test intreped
