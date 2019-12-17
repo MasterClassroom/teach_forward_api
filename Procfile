@@ -1,1 +1,1 @@
-web: gunicorn teach_forward.wsgi
+web: gunicorn intreped.wsgi

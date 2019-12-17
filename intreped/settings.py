@@ -9,7 +9,7 @@ SECRET_KEY = 'f#@zojy%on=0dz!p%f%#xvphh9!bqhzwppd8u&9i-#4e2=u)d0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['master-classroom.herokuapp.com']
+ALLOWED_HOSTS = ['intreped-learning.herokuapp.com']
 
 
 # Application definition
@@ -22,7 +22,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'intreped',
-    'herokuapp'
 ]
 
 MIDDLEWARE = [
@@ -36,8 +35,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# Simplified static file serving.
-# https://warehouse.python.org/project/whitenoise/
 
 STATIC_URL = '/static/'
 
@@ -73,14 +70,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'intreped.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.path.join(BASE_DIR, 'intreped'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'intreped',
         'HOST': 'localhost',
         'PORT': '3001'
     }
@@ -88,9 +81,6 @@ DATABASES = {
 
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
-
-# Password validation
-# https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -107,10 +97,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-# Internationalization
-# https://docs.djangoproject.com/en/3.0/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -120,10 +106,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
