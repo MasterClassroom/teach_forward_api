@@ -9,7 +9,7 @@ env:
   - DJANGO=3.0 DB=postgres
 
 before_install:
-  - export DJANGO_SETTINGS_MODULE=mysite.settings
+  - export DJANGO_SETTINGS_MODULE=intreped.settings
 
 install:
   - pip install -r requirements.txt
