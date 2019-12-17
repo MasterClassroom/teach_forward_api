@@ -50,7 +50,7 @@ MEDIA_URL = "/media/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "live-static-files", "media-root")
 
-ROOT_URLCONF = 'intreped-learning.urls'
+ROOT_URLCONF = 'intreped.urls'
 
 TEMPLATES = [
     {
@@ -72,8 +72,8 @@ WSGI_APPLICATION = 'intreped.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.path.join(BASE_DIR, 'intreped'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'intreped',
         'HOST': 'localhost',
         'PORT': '3001'
     }
