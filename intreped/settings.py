@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'intreped',
+    'models'
 ]
 
 MIDDLEWARE = [
@@ -86,8 +87,8 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'intreped',
-            'HOST': 'localhost',
-            'PORT': '3001'
+            'HOST': '',
+            'PORT': ''
         }
     }
 
