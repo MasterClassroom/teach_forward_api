@@ -70,14 +70,26 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'intreped.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'intreped',
-        'HOST': 'localhost',
-        'PORT': '3001'
+if 'TRAVIS' in os.environ:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'travisci',
+            'USER': 'postgres',
+            'PASSWORD': '',
+            'HOST': 'localhost',
+            'PORT': '',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'intreped',
+            'HOST': 'localhost',
+            'PORT': '3001'
+        }
+    }
 
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
