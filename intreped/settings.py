@@ -9,7 +9,7 @@ SECRET_KEY = 'f#@zojy%on=0dz!p%f%#xvphh9!bqhzwppd8u&9i-#4e2=u)d0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['intreped-learning.herokuapp.com']
+ALLOWED_HOSTS = ['https://intreped.herokuapp.com/']
 
 
 # Application definition
@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'intreped',
+    'models',
 ]
 
 MIDDLEWARE = [
@@ -74,8 +75,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'intreped',
-        'HOST': 'localhost',
-        'PORT': '3001'
+        'HOST': '',
+        'PORT': ''
     }
 }
 
