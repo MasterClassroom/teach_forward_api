@@ -1,4 +1,4 @@
-"""teach_forward_api URL Configuration
+"""intreped URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -18,7 +18,7 @@ from django.urls import path
 from . import views
 
 
-urlpatterns= [
+urlpatterns = [
     path('', views.index, name='index'),
     path('admin/', admin.site.urls),
 ]
