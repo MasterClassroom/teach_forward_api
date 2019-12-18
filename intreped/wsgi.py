@@ -1,5 +1,5 @@
 """
-WSGI config for teach_forward_api project.
+WSGI config for intreped project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'teach_forward_api.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'intreped.settings')
 
 application = get_wsgi_application()
