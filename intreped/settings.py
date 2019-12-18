@@ -9,7 +9,7 @@ SECRET_KEY = 'f#@zojy%on=0dz!p%f%#xvphh9!bqhzwppd8u&9i-#4e2=u)d0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['intreped-learning.herokuapp.com']
+ALLOWED_HOSTS = ['https://intreped.herokuapp.com/']
 
 
 # Application definition
@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'intreped',
     'models'
 ]
