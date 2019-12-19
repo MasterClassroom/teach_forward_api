@@ -1,6 +1,7 @@
 import dj_database_url
 import os
 import django_heroku
+import rest_framework
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
