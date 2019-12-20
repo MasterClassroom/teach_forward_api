@@ -1,1 +1,1 @@
-web: gunicorn intreped.wsgi
+web: gunicorn intreped.wsgi --preload --workers 1
