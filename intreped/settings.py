@@ -73,14 +73,15 @@ TEMPLATES = [
 WSGI_APPLICATION = 'intreped.wsgi.application'
 
 if 'TRAVIS' in os.environ:
+    print os.environ
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'intreped',
             'USER': 'postgres',
             'PASSWORD': '',
-            'HOST': '',
-            'PORT': '5432',
+            'HOST': 'localhost',
+            'PORT': '',
         }
     }
 else:
