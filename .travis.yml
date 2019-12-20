@@ -1,34 +1,26 @@
 language: python
-
 python:
-  - 3.8.0
-
+- 3.8.0
 services: postgresql
-
 env:
-  - DJANGO=3.0 DB=postgres
-
+- DJANGO=3.0 DB=postgres
 before_install:
-  - export DJANGO_SETTINGS_MODULE=intreped.settings
-
+- export DJANGO_SETTINGS_MODULE=intreped.settings
 install:
-  - pip install -r requirements.txt
-  - pip install django==$DJANGO --quiet
-  - pip install psycopg2 --quiet
-  - pip install djangorestframework --quiet
-
+- pip install -r requirements.txt
+- pip install django==$DJANGO --quiet
+- pip install psycopg2 --quiet
+- pip install djangorestframework --quiet
 before_script:
-  - psql -c "CREATE DATABASE intreped_test;" -U postgres
-
+- psql -c "CREATE DATABASE intreped_test;" -U postgres
 deploy:
   provider: heroku
-  api_key: 
-    secure: "v5J6q1YkzoFuF5rGJSUkzcOrH+A2OI7CV3v5Ua+pue4Hu5dCsb0WLanM0hLVBaCTvR1kbtet9glti8fKQv8VPa89kZtmXfSRnOqur+XMfNKxw8XgOCzEHyTAbnXb4aQLxkV277pEJCPYJlANFs2pDj3fhc2+aWmKnW3eoiShHe/MFI4lMrM1j4Z4kgEi+79VmR20Ovu/TSGNsa7kXmVcXNe42tCzDUPIhOCLt+qDA/i7lqMo+/wjiGoWJsWeGZE/FN4+omFLKqWj3/diCOfbyMPYb+PohcmyRju1HM2D8P/ww+P1Fck4JvXYG9pLVoypqkTwEEy5s08b+72jgvw8w8/KCU3SrBrbAG8NpZWtfO8XKPmAyA09QctmqigtVPVQDjmx8enxsYbUAbeXC8x6DqtgYFBR5SMq90SrqtAjiJxDIlXZd0Hbz2pCDlXhUNbTpCApwKTk0VIRWd0t7t9cl+SWJfOJTjr7F5JsricWqd1RDtRSKM0Blgrt/cFb9PFKoHAdyh9pS3UNroeGVOUQyw3TVUSW9yWXD8IRuWmKVIFt1WcXmnYny5h062Se3phGZfgx9sEDyOazITchsI1cdyS1Ji3fG2UOwTOiDkWYgvzZfCFQz1VlBJmj/wWNMlDj+3YY5eJ9IO+80m2bmG/CTku0zA4nJ1D72BH/ouKy42o="
+  api_key:
+    secure: ujUk77MpbNDog1hDTozYr/UVkdL7rnIKQu/jWmLb30okFYQEm3n6Wz9BUTIY1ZXUN6jCULxlsb6sWPc6pGHJYiCQM7fGu0Dr7NFfzKgRrw4jdnRKSxk4Zs21MPYODHmevbrNk1mIcG6v+cry23cdSifFXbwVOcZeFL5Yj1aFp5bYcwziUACBA1+HjVVifakLdIQ6HOiS/8S/syA67bToT2ZU2cJDQNHgC/XU7aUJjNq6c/D8OGWY6c5OXmVDozyRn4VmOf0mrnaFm3OXqo0+rZ3Bq58KGGDpbRN3+zqdTQ8OCMUpOp5bInI5dOUmFywYwIWvZrTY+7yUU1WlLoq3xLDjqKhGKz9ihsUesrbXkp3mYrJgZn7lS+mKTzZqcGh0AGCtbhWYDhvvk9TIYjSgvl5NcRZjE843iONilw22JvL/Ate7AN5YtAEdRs4ZiejnMqEQV3MFUUeIRGhLd7Hf7w5TOZJWXLjNLqT3YVrJa8L+MG0/hYJC/FUegd42gojjeRFQrA4U7/JkPysqUKTuGu7S2yG7BJlTCUnRvuRgmnpbNlPNT1+nhqHEVCt1pX4xntzDnIA9HygijShGrzbt6Y4a79uzyo7UzUk0CAsNrmKnDNOOiJETUlGmtFwr+gCKFMMb1+OMNm1MZ5HrlienHqHDpI5vfCmFftVbKYOXnUA=
   app: intreped
   skip_cleanup: true
   run:
-  - 'python3 manage.py makemigrations'  
-  - 'python3 manage.py migrate'
-
+  - python3 manage.py makemigrations
+  - python3 manage.py migrate
 script:
-  - python3 manage.py test intreped
+- python3 manage.py test intreped
