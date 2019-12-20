@@ -79,7 +79,7 @@ if 'TRAVIS' in os.environ:
             'NAME': 'travisci',
             'USER': 'postgres',
             'PASSWORD': '',
-            'HOST': 'localhost',
+            'HOST': '',
             'PORT': '',
         }
     }
