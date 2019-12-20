@@ -4,7 +4,7 @@ python:
 services: 
   - postgresql
 addons:  
-  postgresql: '12.1'
+  postgresql: "9.5"
 env:
   - DJANGO=3.0 DB=postgres
 before_install:
