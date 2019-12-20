@@ -1,6 +1,7 @@
 language: python
 python:
 - 3.8.0
+dist: trusty
 services: postgresql
 env:
 - DJANGO=3.0 DB=postgres
