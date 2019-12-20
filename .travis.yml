@@ -27,6 +27,6 @@ deploy:
     branch: edit-travis-build
   run:
     - "python3 manage.py --run-syncdb"
-    - "python3 manage.py migrate --database intreped"
+    - "python3 manage.py migrate"
 script:
   - python3 manage.py test intreped
