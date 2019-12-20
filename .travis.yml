@@ -21,10 +21,12 @@ deploy:
   api_key:
     secure: GR5evSif1cIJUAITDF6EmtB9COkrts2eUdLH9j1RMFWXuTWAjrvQSyDZAYZbhaOwKwuSxdIWlLyVAeYt3NUwc7Wxwj4zjyFs30Lb7Nowa6RF9ysWmnu3lM6qzW6vVD3Pson4KFyostW/owH4OSKRRSVon4QuD9CV7HAKyjtCxjBImH7W0QmyPn9QOQQehRlnd63Azjqo6Z71Q14AQJgXiCraqnm55pJFPFe1FGghFhUKB6uQixrq1/ikNN3krnX5PQyIAlWdl5CcH3lJHXkWEBeKY9U0e93MWTiFwPGRPZ1zqgImy7FJOLEjsCLcQEAe6A19/OGsVbB7vk3LXAeqVARK6mskKNAcm+RNULp+/B4/mKyNF/KsGimvXakJbC9m1LH8xu04Pi4ydeD7hqa1uUsEU7ostVejfN7Uit7onN9kwFDHnElXgqqCxynrRKnfdvB3sDXONH4nrPOBb2CGdO9zVKpCVWRveS/Oof+aqZGo81wjzwEdk7x7pRMiGZln99qiqCu5Vaq/QVw62O5CyRHdUb7mcR5b6BTu7encOpmCtR/LLJg0xX+JziiXgw+zNKvIqcVy8RZ61/I8P3dHSWHGQ1xWT43415fsU/ykhqdcB5VSwlPKJrTAcAULsUc1ZGa/5ZwcBE+TRWJVQSRDfA8jezdN0g+c2mfGXFWe4hQ=
   app: intreped
+  skip_cleanup: true
   on:
     repo: intreped-learning/intreped-be
     branch: edit-travis-build
   run:
+    - python3 manage.py makemigration
     - python3 manage.py migrate
 script:
   - python3 manage.py test intreped
