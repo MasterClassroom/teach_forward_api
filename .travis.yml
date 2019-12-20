@@ -3,6 +3,8 @@ python:
 - 3.8
 services: 
   - postgresql
+addons:  
+  postgresql: '12.1'
 env:
   - DJANGO=3.0 DB=postgres
 before_install:
@@ -26,7 +28,6 @@ deploy:
     repo: intreped-learning/intreped-be
     branch: edit-travis-build
   run:
-    - "python3 manage.py --run-syncdb"
     - "python3 manage.py migrate"
 script:
   - python3 manage.py test intreped
